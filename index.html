@@ -7,71 +7,187 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <nav class="topnav">
-        <div class="nav-container">
+    <div class="nav-container">
         <div class="logo">John Reballos</div>
-            <ul class="nav-links">
+
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
-    <div id="container">
-        <div class="profile">
+    </div>
+
+
+    <!--Home Page-->
+    <div class="container" id="Home">
+        <div class="container profile">
             <img src="img/profile.jpg" class="profile-pic">
-            <div class="profile_details">
-                 <div class="name">John Allison Reballos<br>Professional Web Developer</div>
-                <button>Work with me</button>
-                <button>Learn More</button>
+            <div class="card-header text-center">
+                <div class="card bg-color-removed">
+                    <h2>John Allison Reballos</h2>
+                    <p>Professional Web Developer</p>
+                </div>
+                <button class="btn onclick()">Work with me</button>
+                <button class="btn onclick()">Learn More</button>
             </div>
         </div>
     </div>
-    <div class="column-container">
-        <!-- Column 1: about me -->
-        <div class="column about-column">
-            <div class="profile">
-                <div class="profile_details">
-                    <img src="icons/aboutme.png"alt="My Icon" class="myIcon">
-                    <p class="name">Hi, I'm a web developer with 2+ years of experience in telco and healthcare customer service, including sales and tech support.
+
+    <!--About Page-->
+    <div class="container about" id="about">
+        <div class="row">
+
+            <!--About Me-->
+            <div class="col-12 col-md-6 col-md-4 text-center text-color">
+                <div class="card">
+                    <img src="icons/aboutme.png" class="myIcon">
+                    <div class="card-header"><h2>About me</h2></div>
+                    <p class="text-font">Hi, I'm a web developer with 2+ years of experience in telco and healthcare customer service, including sales and tech support.
                         I specialize in building clean, responsive websites using modern web technologies.
                     </p>
                 </div>
             </div>
-        </div>
+            
+            <!--Tech Stack-->
+            <div class="col-12 col-md-6 col-md-4 text-center">
+                <div class="card text-color">
+                    <img src="icons/techstack.png" class="myIcon">
+                    <div class="card-header"><h2>Tech Stack</h2></div>
+                    
+                    <div class="progress-container">
+                        <img src="icons/html5.png" class="icon-img">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                        <span class="progress-text">70%</span>
+                    </div>
 
-        <!-- Column 2: Skills -->
-        <div class="column skills-column">
-            <div class="profile">
-                <div class="profile_details">
-                    <img src="icons/techstack.png"alt="My Icon" class="myIcon">
-                    <p class="name">HTML5<br>CSS3<br>JavaScript<br>React<br>Python</p>
+                    <div class="progress-container">
+                        <img src="icons/css3.png" class="icon-img">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <span class="progress-text">80%</span>
+                    </div>
+
+                    <div class="progress-container">
+                        <img src="icons/javascript.png" class="icon-img">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                        <span class="progress-text">70%</span>
+                    </div>
+
+                    <div class="progress-container">
+                        <img src="icons/react.png" class="icon-img">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%;"></div>
+                        </div>
+                        <span class="progress-text">60%</span>
+                    </div>
+
+                    <div class="progress-container">
+                        <img src="icons/python.png" class="icon-img">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <span class="progress-text">80%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Projects-->
+            <div class="col-12 col-md-6 col-md-4 text-center text-color">
+                <div class="card">
+                    <img src="icons/projects.png" class="myIcon">
+                    <div class="card-header"><h2>Projects</h2></div>
+                    <p class="text-font">Budget-Breakdown-Tool</p>
+                    <p class="text-font">Construction Cost Estimator</p>
+                    <p class="text-font">Single Page Application</p>
+                    <p class="text-font">Single Page Application</p>
+                    <p class="text-font">Single Page Application</p>
+                    <p class="text-font">Single Page Application</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Column 3: Projects -->
-        <div class="column projects-column">
-            <div class="profile">
-                <div class="profile_details">
-                    <img src="icons/projects.png"alt="My Icon" class="myIcon">
-                    <p class="name">Hi, I'm a web developer with 2+ years of experience in telco and healthcare customer service, including sales and tech support.
-                        I specialize in building clean, responsive websites using modern web technologies.
+    <!--Projects page-->
+    <div class="container about" id="projects">
+        <div class="row">
+
+            <div class="col-12 col-md-6 col-md-4 text-center text-color">
+                <div class="card">
+                    <div class="card-header"><h2>Budget-Breakdown-Tool</h2></div>
+                    <p class="text-font"> A single page application that will help the end user to compare
+                        their expenses with the updated benchmark.
+                        Will be posting soon......
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-md-4 text-center text-color">
+                <div class="card">
+                    <div class="card-header"><h2>Construction-cost-Estimator</h2></div>
+                    <p class="text-font"> A single page application that will help the end user to compare
+                        their expenses with the updated benchmark.
+                        Will be posting soon......
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-md-4 text-center text-color">
+                <div class="card">
+                    <div class="card-header"><h2>Personal Expense Tracker</h2></div>
+                    <p class="text-font"> A single page application that will help the end user to compare
+                        their expenses with the updated benchmark.
+                        Will be posting soon......
                     </p>
                 </div>
             </div>
         </div>
-  </div>
+    </div>
+
+
+    <!-- Contact Page-->
+    <div class="container about" id="contact">
+        <div class="container profile">
+            <div class="card-header text-center text-color">
+                <div class="card">
+                    <h2>Get in Touch</h2>
+                    <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 John Allison Reballos. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">GitHub</a>
-                <a href="#" target="_blank">Portfolio</a>
+                <a href="https://www.linkedin.com/in/john-allison-reballos-3562111b6/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/johnreballos" target="_blank">GitHub</a>
+                <a href="https://johnreballos.github.io/" target="_blank">Portfolio</a>
             </div>
         </div>
     </footer>
+
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
+
 </body>
 </html>
