@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spin & Win</title>
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fff;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    #pointer {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 30px solid red;
+      margin: 0 auto 10px;
+    }
+
+    #wheel {
+      width: 90vw;
+      max-width: 300px;
+      height: 90vw;
+      max-height: 300px;
+      border-radius: 50%;
+      border: 8px solid #ff9800;
+      margin: 0 auto 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 5s ease-out;
+    }
+
+    .segment {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0% 0%;
+      background-color: #f44336;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.9rem;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .segment:nth-child(even) {
+      background-color: #4caf50;
+    }
+
+    .segment span {
+      transform: rotate(-45deg);
+      display: block;
+    }
+
+    #spinBtn {
+      padding: 14px 24px;
+      font-size: 1rem;
+      background-color: #ff9800;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.3s ease;
+    }
+
+    #spinBtn:hover {
+      background-color: #e68900;
+    }
+
+    #result {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Desktop Enhancement */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      #spinBtn {
+        font-size: 1.1rem;
+        padding: 16px 30px;
+      }
+
+      .segment {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <h1>Spin the Wheel & Win!</h1>
+    <div id="wheel">
+        <div class="segment" style="transform: rotate(0deg)"><span>$100 Gift Card</span></div>
+        <div class="segment" style="transform: rotate(90deg)"><span>10% Off</span></div>
+        <div class="segment" style="transform: rotate(180deg)"><span>Free Shipping</span></div>
+        <div class="segment" style="transform: rotate(270deg)"><span>Try Again</span></div>
+    </div>
+    <div id="pointer"></div>
+
+    <button id="spinBtn">SPIN NOW</button>
+    
+    <div id="result"></div>
+
+<script>
+    const wheel = document.getElementById("wheel");
+    const result = document.getElementById("result");
+    const spinBtn = document.getElementById("spinBtn");
+
+    const prizes = [
+      "$100 Gift Card",
+      "10% Off",
+      "Free Shipping",
+      "Try Again"
+    ];
+
+    let isSpinning = false;
+
+    spinBtn.addEventListener("click", () => {
+      if (isSpinning) return;
+
+      isSpinning = true;
+      result.textContent = "";
+
+      const selected = Math.floor(Math.random() * prizes.length);
+      const angle = 360 * 4 + (360 / prizes.length) * selected;
+
+      wheel.style.transform = `rotate(-${angle}deg)`;
+
+      setTimeout(() => {
+        result.innerHTML = `You won: <strong>${prizes[selected]}</strong>!`;
+        isSpinning = false;
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>

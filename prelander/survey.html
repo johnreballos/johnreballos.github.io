@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    p.tagline {
+      color: #e91e63;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .options button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .options button:hover {
+      background: #f0f0f0;
+    }
+
+    .progress {
+      height: 10px;
+      background: #eee;
+      border-radius: 5px;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: #4caf50;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .final-message {
+      display: none;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .cta-button {
+      background-color: #ff5722;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎉 Complete This Survey to Get a Special Discount!</h1>
+    <p class="tagline">Just answer a few quick questions...</p>
+
+    <div id="survey">
+      <div id="questionBox">
+        <div class="question" id="questionText"></div>
+        <div class="options" id="optionsContainer"></div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="final-message" id="finalMessage">
+      🎊 <strong>Congratulations!</strong> You’ve qualified for a special discount!
+      <br><br>
+      <button class="cta-button" onclick="window.location.href='https://your-offer-link.com';">
+        👉 Claim Your Discount
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "How often do you shop online?",
+        options: ["Daily", "Weekly", "Occasionally", "Rarely"]
+      },
+      {
+        question: "What kind of deals do you prefer?",
+        options: ["Percentage off", "Free shipping", "Buy 1 Get 1", "Flash sales"]
+      },
+      {
+        question: "Which product category interests you most?",
+        options: ["Fashion", "Electronics", "Home & Kitchen", "Health & Beauty"]
+      }
+    ];
+
+    let currentQuestion = 0;
+    const questionText = document.getElementById("questionText");
+    const optionsContainer = document.getElementById("optionsContainer");
+    const progressBar = document.getElementById("progressBar");
+    const finalMessage = document.getElementById("finalMessage");
+
+    function showQuestion(index) {
+      const q = questions[index];
+      questionText.innerText = q.question;
+      optionsContainer.innerHTML = "";
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.innerText = option;
+        btn.onclick = () => handleAnswer();
+        optionsContainer.appendChild(btn);
+      });
+
+      progressBar.style.width = ((index) / questions.length) * 100 + "%";
+    }
+
+    function handleAnswer() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+      } else {
+        document.getElementById("survey").style.display = "none";
+        progressBar.style.width = "100%";
+        finalMessage.style.display = "block";
+      }
+    }
+
+    // Initialize
+    showQuestion(currentQuestion);
+  </script>
+</body>
+</html>

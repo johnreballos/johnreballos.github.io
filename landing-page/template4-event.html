@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Landing Page</title>
+  <link rel="stylesheet" href="landing-library.css">
+<style>
+.hero-tech {
+      background: radial-gradient(circle at top left, #60A5FA 0%, transparent 40%),
+                  radial-gradient(circle at bottom right, #FBBF24 0%, transparent 50%),
+                  radial-gradient(circle at center, #2563EB 0%, #0f172a 100%);
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .hero-tech-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 7rem;
+    }
+
+    .hero-tech-text {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .hero-tech-text h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-tech-text p {
+      font-size: 1rem;
+    }
+
+    .btn-tech {
+      display: inline-block;
+      background-color: #FBBF24;
+      color: #111827;
+      padding: 0.75rem 1.25rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+    }
+
+    /* Slider: Mobile first */
+    .photo-slider {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.5s ease-in-out;
+      width: max-content;
+    }
+
+    .slider-track img {
+      flex-shrink: 0;
+      width: 300px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    /* Tablet/Desktop layout: text left, grid right */
+    @media (min-width: 768px) {
+      .hero-tech-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .hero-tech-text {
+        flex: 1;
+        margin-bottom: 0;
+        text-align: left;
+      }
+
+      .photo-slider {
+        flex: 1;
+        overflow: visible;
+      }
+
+      .slider-track {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        transform: none !important;
+        width: 100%;
+      }
+
+      .slider-track img {
+        width: 100%;
+        height: 180px;
+      }
+    }
+</style>
+</head>
+<body>
+  <header class="hero-tech">
+    <div class="hero-tech-content">
+      <div class="hero-tech-text">
+        <h1>Tech Innovators Conference 2025</h1>
+        <p>Join industry leaders and discover the future of tech.</p>
+        <a href="#register" class="btn-tech">Register Now</a>
+      </div>
+      <div class="photo-slider">
+        <div class="slider-track">
+          <img src="img/tech1.jpg" alt="Tech 1">
+          <img src="img/tech2.jpg" alt="Tech 2">
+          <img src="img/tech3.jpg" alt="Tech 3">
+          <img src="img/tech4.jpg" alt="Tech 4">
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="section text-center">
+    <h2>Speakers</h2>
+    <div class="grid grid-3" style="margin-top:2rem;">
+      <div class="card">
+        <h3>Jane Smith</h3>
+        <p>CEO of TechFuture</p>
+      </div>
+      <div class="card">
+        <h3>John Doe</h3>
+        <p>Lead Developer at AI Labs</p>
+      </div>
+      <div class="card">
+        <h3>Sarah Lee</h3>
+        <p>UX Designer, InnovateX</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="section text-center" style="background:#f9f9f9;">
+    <h2>Register Now</h2>
+    <a href="#" class="btn-primary">Reserve Your Seat</a>
+  </section>
+<script>
+    const track = document.querySelector('.slider-track');
+    const slides = track.querySelectorAll('img');
+    let index = 0;
+    let interval;
+
+    function slideImages() {
+      if (window.innerWidth >= 768) return;
+
+      index++;
+      if (index >= slides.length) index = 0;
+
+      const slideWidth = slides[0].getBoundingClientRect().width + 16;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    function startSlider() {
+      if (window.innerWidth < 768 && !interval) {
+        interval = setInterval(slideImages, 3000);
+      }
+    }
+
+    function stopSlider() {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+        track.style.transform = 'translateX(0)';
+        index = 0;
+      }
+    }
+
+    window.addEventListener('load', startSlider);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 768) {
+        startSlider();
+      } else {
+        stopSlider();
+      }
+    });
+  </script>
+</body>
+</html>

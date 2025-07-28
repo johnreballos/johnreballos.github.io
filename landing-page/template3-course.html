@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Landing Page</title>
+  <link rel="stylesheet" href="landing-library.css">
+<style>
+  .hero {
+  position: relative;
+  background: url('img/course-img.png') center/cover no-repeat;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  background-color: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.image-content {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('img/course-bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+    background: none;
+    padding: 0;
+  }
+
+  .text-content {
+    flex: 1;
+    color: white;
+    background: none;
+    padding-top: 12rem;
+  }
+
+  .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .image-content img {
+    max-height: 70vh;
+    width: auto;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="text-content">
+        <h1>Master Web Design in 30 Days</h1>
+        <p>Learn modern web design techniques from scratch.</p>
+        <a href="#enroll" class="btn-primary">Enroll Now</a>
+      </div>
+      <div class="image-content">
+        <img src="img/course-img.png" alt="Course" />
+      </div>
+    </div>
+  </header>
+
+
+  <section class="section text-center">
+    <h2>What You’ll Learn</h2>
+    <div class="grid grid-3" style="margin-top:2rem;">
+      <div class="card">
+        <h3>HTML & CSS</h3>
+        <p>Learn to build modern web pages.</p>
+      </div>
+      <div class="card">
+        <h3>Responsive Design</h3>
+        <p>Make your websites look great on any device.</p>
+      </div>
+      <div class="card">
+        <h3>Conversion Techniques</h3>
+        <p>Design landing pages that convert.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="enroll" class="section text-center" style="background:#f9f9f9;">
+    <h2>Join Now for $49</h2>
+    <a href="#" class="btn-primary">Enroll Today</a>
+  </section>
+</body>
+</html>

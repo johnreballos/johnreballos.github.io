@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Win a $100 Gift Card!</title>
+  <link rel="stylesheet" href="styles.css" />
+<style>
+    /* Base styles - mobile first */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #28a745;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.intro-text {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e9ecef;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.cta-btn {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Tablets and up */
+@media (min-width: 600px) {
+  .container {
+    max-width: 500px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 900px) {
+  body {
+    padding: 40px;
+  }
+
+  .container {
+    padding: 40px 30px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Congratulations! 🎉</h1>
+    <p class="intro-text">You've been selected to win a <strong>$100 Gift Card</strong>!</p>
+
+    <div class="question" id="step1">
+      <p>Are you over 18 years old?</p>
+      <button onclick="nextStep()">Yes</button>
+      <button onclick="disqualify()">No</button>
+    </div>
+
+    <div id="step2" class="hidden">
+      <p>Do you want to claim your entry now?</p>
+      <button onclick="showCTA()">Yes, Claim Now!</button>
+    </div>
+
+    <div id="cta" class="hidden">
+      <p>Hurry! Only <span id="spots">7</span> spots left!</p>
+      <button class="cta-btn">Continue</button>
+    </div>
+  </div>
+<script>
+function nextStep() {
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.remove("hidden");
+}
+
+function disqualify() {
+  document.getElementById("step1").innerHTML = "<p>Sorry, you must be 18 or older to enter.</p>";
+}
+
+function showCTA() {
+  document.getElementById("step2").classList.add("hidden");
+  document.getElementById("cta").classList.remove("hidden");
+  startCountdown();
+}
+
+function startCountdown() {
+  let spots = 7;
+  const spotElement = document.getElementById("spots");
+
+  const interval = setInterval(() => {
+    spots--;
+    spotElement.textContent = spots;
+    if (spots <= 1) {
+      clearInterval(interval);
+    }
+  }, 3000); // 3-second interval to simulate urgency
+}
+</script>
+
+</body>
+</html>

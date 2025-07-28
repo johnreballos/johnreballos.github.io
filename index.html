@@ -3,173 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Allison Reballos | Web Developer</title>
-    <link rel="stylesheet" href="style.css"/>
+    <title>Front End Developer | Web Designer</title>
+    <link rel="stylesheet" href="myportfolio.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 </head>
 <body>
-    <div class="nav-container">
-        <div class="logo">John Reballos</div>
-
-        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-    </div>
-
-
-    <!--Home Page-->
-    <div class="container" id="Home">
-        <div class="container profile">
-            <img src="img/profile.jpg" class="profile-pic">
-            <div class="card-header text-center">
-                <div class="card bg-color-removed">
-                    <h2>John Allison Reballos</h2>
-                    <p>Professional Web Developer</p>
-                </div>
-                <button class="btn onclick()">Work with me</button>
-                <button class="btn onclick()">Learn More</button>
-            </div>
+    <header class="hero">
+        <div class="navbar">
+            <div class="logo"><a href="#"><img src="img/profile.jpg"></a></div>
+            <nav class="nav-links" id="navLinks">
+                <a href="https://johnreballos.github.io/">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle">☰</button>
         </div>
-    </div>
-
-    <!--About Page-->
-    <div class="container about" id="about">
-        <div class="row">
-
-            <!--About Me-->
-            <div class="col-12 col-md-6 col-md-4 text-center text-color">
-                <div class="card">
-                    <img src="icons/aboutme.png" class="myIcon">
-                    <div class="card-header"><h2>About me</h2></div>
-                    <p class="text-font">Hi, I'm a web developer with 2+ years of experience in telco and healthcare customer service, including sales and tech support.
-                        I specialize in building clean, responsive websites using modern web technologies.
-                    </p>
-                </div>
+        <div class="hero-content">
+            <h2>Your Ideas + My Code = Creative Digital Solutions</h2>
+            <p>Get your web design</p>
+            <div class="profile-card">
+                <img src="img/profile.jpg">
+                <h3>John Allison Reballos</h3>
+                <p>Front End Developer | Web Designer</p>
             </div>
-            
-            <!--Tech Stack-->
-            <div class="col-12 col-md-6 col-md-4 text-center">
-                <div class="card text-color">
-                    <img src="icons/techstack.png" class="myIcon">
-                    <div class="card-header"><h2>Tech Stack</h2></div>
-                    
-                    <div class="progress-container">
-                        <img src="icons/html5.png" class="icon-img">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 100%;"></div>
-                        </div>
-                        <span class="progress-text">100%</span>
-                    </div>
-
-                    <div class="progress-container">
-                        <img src="icons/css3.png" class="icon-img">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
-                        <span class="progress-text">80%</span>
-                    </div>
-
-                    <div class="progress-container">
-                        <img src="icons/javascript.png" class="icon-img">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%;"></div>
-                        </div>
-                        <span class="progress-text">70%</span>
-                    </div>
-
-                    <div class="progress-container">
-                        <img src="icons/react.png" class="icon-img">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%;"></div>
-                        </div>
-                        <span class="progress-text">60%</span>
-                    </div>
-
-                    <div class="progress-container">
-                        <img src="icons/python.png" class="icon-img">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
-                        <span class="progress-text">80%</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!--Projects-->
-            <div class="col-12 col-md-6 col-md-4 text-center text-color">
-                <div class="card">
-                    <img src="icons/projects.png" class="myIcon">
-                    <div class="card-header"><h2>Projects</h2></div>
-                    <p class="text-font">Budget-Breakdown-Tool</p>
-                    <p class="text-font">Construction Cost Estimator</p>
-                    <p class="text-font">Single Page Application</p>
-                    <p class="text-font">Single Page Application</p>
-                    <p class="text-font">Single Page Application</p>
-                    <p class="text-font">Single Page Application</p>
-                </div>
-            </div>
+            <a href="#about" class="cta-btn">Learn more</a>
+            <a href="#contact" class="cta-btn">Work with me</a>
         </div>
-    </div>
-
-    <!--Projects page-->
-    <div class="container about" id="projects">
-        <div class="row">
-
-            <div class="col-12 col-md-6 col-md-4 text-center text-color">
-                <div class="card">
-                    <div class="card-header"><h2>Budget-Breakdown-Tool</h2></div>
-                    <p class="text-font"> A single page application that will help the end user to compare
-                        their expenses with the updated benchmark.
-                        Will be posting soon......
-                    </p>
+    </header>
+    <section class="container">
+        <h2 class="page-title" id="about">About</h2>
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active"  data-tab="tab1">About Me</button>
+                <button class="tab-btn" data-tab="tab2">Tech Stack</button>
+                <button class="tab-btn" data-tab="tab3">Skills</button>
+            </div>
+            <div class="tab-content active" id="tab1">
+                <p>I started my journey in customer service, helping clients in the telecom and 
+                    healthcare industries with sales and technical support. 
+                    Those years taught me how to understand user needs and deliver practical solutions. 
+                    Today, I bring that same mindset into web development—creating clean, responsive, and user-friendly websites using modern technologies.
+                    From customer service to clean code, my goal is simple: build websites that truly work for people.
+                </p>
+            </div>
+            <div class="tab-content" id="tab2">
+                <div class="progress-container">
+                    <img src="icons/html5.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:100%"></div>
+                    </div>
+                    <span>100%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="icons/css3.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:80%"></div>
+                    </div>
+                    <span>80%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="icons/javascript.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:60%"></div>
+                    </div>
+                    <span>60%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="icons/react.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:50%"></div>
+                    </div>
+                    <span>50%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="icons/python.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:60%"></div>
+                    </div>
+                    <span>60%</span>
                 </div>
             </div>
-            
-            <div class="col-12 col-md-6 col-md-4 text-center text-color">
-                <div class="card">
-                    <div class="card-header"><h2>Construction-cost-Estimator</h2></div>
-                    <p class="text-font"> A single page application that will help the end user to compare
-                        their expenses with the updated benchmark.
-                        Will be posting soon......
-                    </p>
+            <div class="tab-content" id="tab3">
+                <div class="progress-container">
+                    <img src="html5.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:100%"></div>
+                    </div>
+                    <span>100%</span>
                 </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-md-4 text-center text-color">
-                <div class="card">
-                    <div class="card-header"><h2>Personal Expense Tracker</h2></div>
-                    <p class="text-font"> A single page application that will help the end user to compare
-                        their expenses with the updated benchmark.
-                        Will be posting soon......
-                    </p>
+                <div class="progress-container">
+                    <img src="css3.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:80%"></div>
+                    </div>
+                    <span>80%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="javascript.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:60%"></div>
+                    </div>
+                    <span>60%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="react.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:50%"></div>
+                    </div>
+                    <span>50%</span>
+                </div>
+                <div class="progress-container">
+                    <img src="python.png">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:60%"></div>
+                    </div>
+                    <span>60%</span>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <!-- Contact Page-->
-    <div class="container about" id="contact">
-        <div class="container profile">
-            <div class="card-header text-center text-color">
-                <div class="card">
-                    <h2>Get in Touch</h2>
-                    <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                    </form>
+    </section>
+    <main class="gallery-container">
+        <h2 id="projects">Projects</h2>
+        <div class="gallery">
+            <div class="card">
+                <img src="img/landing-page/Landing-SS.png">
+                <div class="card-body">
+                    <h2>Landing Page</h2>
+                    <p>Responsive Design, Clean Layout, Fast Loading</p>
+                    <a class="card-btn" href="landing-page-template.html">View more</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/prelander/Prelander-SS.png">
+                <div class="card-body">
+                    <h2>Pre Lander</h2>
+                    <p>Classic Call-to-Action, Quiz, Story Prelander</p>
+                    <a class="card-btn" href="prelander-templates.html">View more</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/spa/SPA-SS.png">
+                <div class="card-body">
+                    <h2>Web Single Page Application</h2>
+                    <p>Optimized, Dynamic, Reactive</p>
+                    <a class="card-btn" href="spa-gallery.html">View more</a>
                 </div>
             </div>
         </div>
-    </div>
-
+    </main>
+    <section id="contact" class="cta">
+        <h2>Work with me</h2>
+        <p>Let's create a best creative digital solutions for your product</p>
+        <a href="#" class="cta-btn">Contact Me</a>
+    </section>
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 John Allison Reballos. All rights reserved.</p>
@@ -180,14 +168,5 @@
             </div>
         </div>
     </footer>
-
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('active');
-  }
-</script>
-
 </body>
 </html>

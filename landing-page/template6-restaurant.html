@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-family: 'Poppins', sans-serif; line-height: 1.6; color:#050401; background: #fff;}
+h1,h2,h3,h4 {font-weight: 700;}
+a {text-decoration: none;}
+img {width:100%; display: block;}
+.hero {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('img/placemat.webp') center/cover no-repeat;
+    background-color: #fffaff;
+    background-blend-mode: multiply;
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+.hero-content img{
+    height: 50vh;
+    justify-self: center;
+    object-fit: cover;
+}
+.btn-primary {
+    background: #dd6e42;
+    color:#050401;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+}
+.btn-primary:hover {background: #30bced; color:#fffaff}
+.section { padding: 4rem 2rem;background: #30bced;}
+.text-center {
+    text-align: center;
+}
+.grid {display: grid; gap: 2rem;}
+.grid-3 {grid-template-columns: repeat(auto-fit, minmax(250px,1fr))}
+.card {
+    background:#fffaff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+.card img{width: 100%;height: 180px; object-fit:contain;}
+</style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <img src="img/resto.png">
+            <h2>Pares, Tapsi & Shanghai</h2>
+            <p>Sarap na Walang Arte – Pares, Tapsi, Shanghai!</p>
+            <a href="#Order" class="btn-primary">Order now</a>
+        </div>
+    </header>
+    <section class="section text-center">
+        <h2>Our Specials</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <img src="img/pares2.png">
+                <h3>Pares</h3>
+                <p>Pares na tunay, lutong Pinoy!</p>
+            </div>
+            <div class="card">
+                <img src="img/Tapsi.png">
+                <h3>Tapsilog</h3>
+                <p>Garlic rice. Tender tapa. Perfect egg. That’s Tapsilog.</p>
+            </div>
+            <div class="card">
+                <img src="img/Lumpia.png">
+                <h3>Shanghai</h3>
+                <p>Crispy, tasty, always the first to go.</p>
+            </div>
+        </div>
+    </section>
+    <section id="Order" class="section text-center" style="background: #fffaff;">
+        <h2>Pares + Tapsilog + Lumpia? Yes, Please!</h2>
+        <p>Combo Deals That Hit the Spot!</p>
+        <a href="#" class="btn-primary">Order Na</a>
+    </section>
+</body>
+</html>

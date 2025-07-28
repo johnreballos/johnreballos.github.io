@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fff;
+      color: #333;
+      padding: 5vw;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 25px;
+      margin: 8px;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      cursor: pointer;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    button:hover { background: #2980b9; }
+    .result {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Find Out Your Perfect Match!</h1>
+  <div id="quiz">
+    <p class="question">Question 1: What do you prefer?</p>
+    <button onclick="nextQuestion()">Adventure</button>
+    <button onclick="nextQuestion()">Relaxation</button>
+  </div>
+  <script>
+    const questions = [
+      "Question 2: Choose your ideal vacation spot?",
+      "Question 3: Morning person or night owl?"
+    ];
+    let current = 0;
+    function nextQuestion() {
+      current++;
+      const quiz = document.getElementById('quiz');
+      if (current <= questions.length) {
+        quiz.innerHTML = `<p class="question">${questions[current-1]}</p>
+          <button onclick="nextQuestion()">Option 1</button>
+          <button onclick="nextQuestion()">Option 2</button>`;
+      } else {
+        quiz.innerHTML = `<p class="result">Your perfect match is waiting! <a href="#">Click here</a></p>`;
+      }
+    }
+  </script>
+</body>
+</html>
